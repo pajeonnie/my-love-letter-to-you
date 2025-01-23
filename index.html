@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Love Letter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hidden Background music (YouTube embed) -->
+    <div class="youtube-player">
+        <!-- Updated iframe for autoplay and loop, hidden using CSS -->
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/98zHKN-xSHk?autoplay=1&loop=1&playlist=98zHKN-xSHk" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="container">
+        <h1 class="title">A Love Letter Just for You</h1>
+        <button class="love-button" id="loveButton" onclick="openLoveLetter()">Open My Heart</button>
+    </div>
+
+    <!-- Modal for Love Letter -->
+    <div id="loveLetterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoveLetter()">&times;</span>
+            <!-- Image that will unscroll -->
+            <img src="images/love-image.jpg" alt="Love Image" class="love-image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

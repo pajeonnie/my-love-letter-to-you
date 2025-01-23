@@ -1,0 +1,148 @@
+/* General styling for body */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #6a1b9a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #ffebee; /* Fallback color in case the GIF fails to load */
+
+    /* Set the anime gif as the background */
+    background-image: url('https://i.pinimg.com/originals/1f/df/07/1fdf07f4552defe8a4f4022e42d44c64.gif'); /* Path to your anime gif */
+    
+    /* Ensure the gif covers the entire viewport */
+    background-size: cover;  /* Stretch the gif to cover the entire screen */
+    background-repeat: no-repeat;  /* Do not repeat the image */
+    background-position: center center;  /* Center the gif */
+}
+
+/* Container for content */
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(248, 187, 208, 0.8); /* Slight opacity to see the background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Love button styling */
+.love-button {
+    background-color: #e91e63;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.love-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    overflow: auto;
+    padding-top: 60px;
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 80%;
+    height: 95%;
+    max-width: 800px;
+    max-height: 95vh;
+    text-align: center;
+    color: #444;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Styling for the love image */
+.love-image {
+    width: 100%;
+    height: 80%; /* Reduced height */
+    object-fit: contain; /* Ensure the whole image is visible */
+    border-radius: 8px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-100%); /* Start above the modal */
+    transition: transform 1.5s ease, opacity 1.5s ease; /* Add transition for the image */
+}
+
+/* The unscroll animation */
+@keyframes unscroll {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%); /* Image starts off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Image slides into place */
+    }
+}
+
+/* Modal is visible, trigger animation */
+.modal.show .love-image {
+    animation: unscroll 1.5s forwards; /* Runs only once */
+    opacity: 1;
+    transform: translateY(0); /* Starts visible */
+}
+
+/* Close button styling */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Styling for YouTube embed (Hiding the iframe) */
+.youtube-player {
+    position: absolute;
+    top: -9999px; /* Push the player off-screen */
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+iframe {
+    position: absolute;
+    top: -9999px; /* Ensure the iframe is hidden off the screen */
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
